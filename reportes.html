@@ -166,7 +166,7 @@
             <button class="tab">Cancelados</button>
           </div>
 
-          <button class="create-btn">
+         <button class="create-btn open-report-modal" type="button">
             <span>＋</span>
             Nuevo reporte
           </button>
@@ -446,7 +446,7 @@
         <h3>Acciones rápidas</h3>
 
         <div class="quick-actions">
-          <button>＋ Nuevo reporte</button>
+          <button id="openReportModalQuick">＋ Nuevo reporte</button>
           <button>📍 Ver mapa de reportes</button>
         </div>
       </section>
@@ -454,5 +454,96 @@
     </aside>
 
   </div>
+  <!-- MODAL NUEVO REPORTE -->
+<div class="modal-overlay" id="reportModal">
+  <div class="modal-card">
+
+    <div class="modal-header">
+      <div>
+        <h2>Nuevo reporte</h2>
+        <p>Registra una incidencia para darle seguimiento en la comunidad.</p>
+      </div>
+
+      <button class="close-modal" id="closeReportModal">×</button>
+    </div>
+
+    <form id="newReportForm" class="modal-form">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="reportTitle">Título del reporte</label>
+          <input 
+            type="text" 
+            id="reportTitle" 
+            placeholder="Ej. Fuga de agua en área común" 
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="reportCategory">Categoría</label>
+          <select id="reportCategory" required>
+            <option value="">Selecciona una categoría</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+            <option value="Alumbrado">Alumbrado</option>
+            <option value="Plomería">Plomería</option>
+            <option value="Áreas comunes">Áreas comunes</option>
+            <option value="Seguridad">Seguridad</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="reportLocation">Ubicación</label>
+          <input 
+            type="text" 
+            id="reportLocation" 
+            placeholder="Ej. Torre A - Piso 3" 
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="reportPriority">Prioridad</label>
+          <select id="reportPriority" required>
+            <option value="">Selecciona prioridad</option>
+            <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Baja">Baja</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="reportDescription">Descripción del problema</label>
+        <textarea 
+          id="reportDescription" 
+          rows="4" 
+          placeholder="Describe brevemente qué sucede..."
+          required
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="reportImage">Evidencia opcional</label>
+        <input type="file" id="reportImage" accept="image/*" />
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="cancel-btn" id="cancelReportModal">
+          Cancelar
+        </button>
+
+        <button type="submit" class="submit-btn">
+          Crear reporte
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script src="js/reportes.js"></script>
 </body>
 </html>

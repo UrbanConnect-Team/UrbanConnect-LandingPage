@@ -34,11 +34,7 @@ loginForm.addEventListener("submit", function (event) {
 
   if (usuarioEncontrado) {
     localStorage.setItem("usuarioActivo", JSON.stringify(usuarioEncontrado));
-
-    alert("Bienvenido a urbanConnect");
-
-    // Cuando tengas tu pantalla principal, cambia esto:
-    window.location.href = "dashboard.html";
+    window.location.href = "index.html";
   } else {
     alert("Usuario o contraseña incorrectos");
   }
