@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>urbanConnect | Usuarios</title>
+  <title>urbanConnect | Accesos y operaciones</title>
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/usuarios.css" />
@@ -12,71 +12,117 @@
   <div class="app-layout">
     <aside class="sidebar">
       <div class="logo"><img src="img/logo-urbanconnect.png" alt="Logo urbanConnect" /><h2>urban<span>Connect</span></h2></div>
-      <nav class="menu">
-        <a href="dashboard.html" class="menu-item"><span>🏠</span>Inicio</a>
-        <a href="comunicados.html" class="menu-item"><span>📢</span>Comunicados</a>
-        <a href="reportes.html" class="menu-item"><span>📊</span>Reportes</a>
-        <a href="servicios.html" class="menu-item"><span>🛠️</span>Servicios</a>
-        <a href="encuestas.html" class="menu-item"><span>📝</span>Encuestas</a>
-        <a href="reservas.html" class="menu-item"><span>📅</span>Reservas</a>
-        <a href="pagos.html" class="menu-item"><span>💳</span>Pagos</a>
-        <a href="documentos.html" class="menu-item"><span>📁</span>Documentos</a>
-        <a href="usuarios.html" class="menu-item active"><span>👥</span>Usuarios</a>
-        <a href="configuracion.html" class="menu-item"><span>⚙️</span>Configuración</a>
+      <nav class="menu" aria-label="Navegación principal">
+        <a href="dashboard.html" class="menu-item"><span>⌂</span>Inicio</a>
+        <a href="comunicados.html" class="menu-item"><span>◉</span>Comunicados</a>
+        <a href="reportes.html" class="menu-item"><span>▥</span>Reportes</a>
+        <a href="servicios.html" class="menu-item"><span>◇</span>Servicios</a>
+        <a href="encuestas.html" class="menu-item"><span>✓</span>Encuestas</a>
+        <a href="reservas.html" class="menu-item"><span>□</span>Reservas</a>
+        <a href="pagos.html" class="menu-item"><span>$</span>Pagos</a>
+        <a href="documentos.html" class="menu-item"><span>▤</span>Documentos</a>
+        <a href="usuarios.html" class="menu-item active" aria-current="page"><span>♙</span>Accesos</a>
+        <a href="configuracion.html" class="menu-item"><span>⚙</span>Configuración</a>
       </nav>
-      <div class="sidebar-card"><div class="shield-box">🛡️</div><h3>Plataforma segura para tu comunidad</h3><p>Tus datos están protegidos</p><a href="#">Más información →</a></div>
+      <div class="sidebar-card"><div class="shield-box">◈</div><h3>Operación segura</h3><p>Los registros de acceso quedan disponibles en este dispositivo.</p></div>
     </aside>
+
     <main class="main-content">
-      <header class="topbar"><div><h1>Usuarios</h1><p>Administra residentes, propietarios, roles y accesos del edificio.</p></div><div class="top-actions"><button class="icon-btn">🔍</button><button class="icon-btn notification">🔔<span>3</span></button><div class="profile"><div class="avatar">JP</div><div><h4>Juan Pérez</h4><p>Administrador</p></div><span class="arrow">⌄</span></div></div></header>
-      <section class="stats-row">
-        <article class="stat-card"><div class="stat-icon green">👥</div><div><p>Usuarios activos</p><h2>128</h2><span>De 200 disponibles</span></div></article>
-        <article class="stat-card"><div class="stat-icon blue">🏠</div><div><p>Residentes</p><h2>104</h2><span>Registrados</span></div></article>
-        <article class="stat-card"><div class="stat-icon orange">⏳</div><div><p>Pendientes</p><h2>9</h2><span>Por aprobar</span></div></article>
-        <article class="stat-card"><div class="stat-icon red">🔒</div><div><p>Bloqueados</p><h2>3</h2><span>Revisión</span></div></article>
-      </section>
-      <section class="payments-panel">
-        <div class="tabs-header"><div class="tabs"><button class="tab active">Todos</button><button class="tab">Residentes</button><button class="tab">Administradores</button><button class="tab">Pendientes</button></div><button class="create-btn"><span>＋</span>Nuevo usuario</button></div>
-        <div class="filters"><div class="search-box"><input type="text" placeholder="Buscar por nombre, correo o departamento..." /><span>🔍</span></div><select><option>Todos los roles</option><option>Administrador</option><option>Residente</option><option>Propietario</option></select><select><option>Todos los estados</option><option>Activo</option><option>Pendiente</option><option>Bloqueado</option></select><button class="filter-btn">⚗️ Filtros</button></div>
-        <div class="payment-list">
-          <article class="payment-card"><div class="payment-icon paid">JP</div><div class="payment-info"><span class="folio">USR-001</span><h3>Juan Pérez</h3><p>juan.perez@email.com · Depto 304 · Administrador.</p><div class="payment-tags"><span class="tag green">Activo</span><span class="method">🛡️ Administrador</span></div></div><div class="payment-meta"><span class="status paid">Activo</span><h4>Torre A</h4><p>Último acceso: hoy</p></div><button class="more-btn">•••</button></article>
-          <article class="payment-card"><div class="payment-icon pending">MG</div><div class="payment-info"><span class="folio">USR-042</span><h3>María Gómez</h3><p>maria.gomez@email.com · Depto 210 · Residente.</p><div class="payment-tags"><span class="tag orange">Pendiente</span><span class="method">📩 Invitación enviada</span></div></div><div class="payment-meta"><span class="status pending">Pendiente</span><h4>Torre B</h4><p>Registro nuevo</p></div><button class="more-btn">•••</button></article>
-          <article class="payment-card"><div class="payment-icon agreement">CR</div><div class="payment-info"><span class="folio">USR-087</span><h3>Carlos Rivas</h3><p>carlos.rivas@email.com · Depto 118 · Propietario.</p><div class="payment-tags"><span class="tag blue">Propietario</span><span class="method">🔑 Acceso completo</span></div></div><div class="payment-meta"><span class="status agreement">Activo</span><h4>Torre A</h4><p>Último acceso: ayer</p></div><button class="more-btn">•••</button></article>
-        </div>
+      <header class="topbar">
+        <div><p class="eyebrow">Administración del edificio</p><h1>Accesos y operaciones</h1><p>Paquetería, visitas, personal, insumos y mudanzas en un solo lugar.</p></div>
+        <div class="profile"><div class="avatar">JP</div><div><h4>Juan Pérez</h4><p>Administrador</p></div></div>
+      </header>
+
+      <section class="stats-row" aria-label="Resumen operativo">
+        <article class="stat-card"><div class="stat-icon green">▣</div><div><p>Paquetes pendientes</p><h2 id="statPaquetes">0</h2><span>Por entregar</span></div></article>
+        <article class="stat-card"><div class="stat-icon red">!</div><div><p>Stock bajo</p><h2 id="statStock">0</h2><span>Insumos por reponer</span></div></article>
+        <article class="stat-card"><div class="stat-icon blue">⌗</div><div><p>Visitas vigentes</p><h2 id="statVisitas">0</h2><span>Con QR activo</span></div></article>
+        <article class="stat-card"><div class="stat-icon orange">↕</div><div><p>Mudanzas próximas</p><h2 id="statMudanzas">0</h2><span>Con orden generada</span></div></article>
       </section>
 
-      <form id="userForm" class="module-form">
-        <h3>Nuevo usuario</h3>
+      <nav class="section-tabs" aria-label="Operaciones" role="tablist">
+        <button class="section-tab active" id="tab-paquetes" data-tab="paquetes" role="tab" aria-selected="true" aria-controls="panel-paquetes">Paquetes</button>
+        <button class="section-tab" id="tab-stock" data-tab="stock" role="tab" aria-selected="false" aria-controls="panel-stock">Stock gimnasio</button>
+        <button class="section-tab" id="tab-visitas" data-tab="visitas" role="tab" aria-selected="false" aria-controls="panel-visitas">QR de visitas</button>
+        <button class="section-tab" id="tab-personal" data-tab="personal" role="tab" aria-selected="false" aria-controls="panel-personal">Personal doméstico</button>
+        <button class="section-tab" id="tab-mudanzas" data-tab="mudanzas" role="tab" aria-selected="false" aria-controls="panel-mudanzas">Mudanzas</button>
+      </nav>
 
-        <label for="userName">Nombre completo</label>
-        <input type="text" id="userName" name="userName" placeholder="Ej. María Gómez" required />
+      <section class="module-section tab-panel active" id="panel-paquetes" data-panel="paquetes" role="tabpanel" aria-labelledby="tab-paquetes" data-hu="HU-21">
+        <div class="section-heading"><div><p class="eyebrow">HU-21</p><h2>Recepción de paquetes</h2><p>Registra el ingreso y notifica de inmediato al residente.</p></div></div>
+        <form id="paqueteForm" class="operation-form">
+          <label>Residente <input id="paqueteResidente" name="residente" required placeholder="Ej. María Gómez" /></label>
+          <label>Departamento <input id="paqueteDepartamento" name="departamento" required placeholder="Ej. B-210" /></label>
+          <label>Empresa de envío <input id="paqueteEmpresa" name="empresa" required placeholder="Ej. Olva Courier" /></label>
+          <label>N.º de seguimiento <input id="paqueteTracking" name="tracking" required placeholder="Ej. OLV-45821" /></label>
+          <label class="field-wide">Descripción <input id="paqueteDescripcion" name="descripcion" required placeholder="Ej. Caja mediana" /></label>
+          <button class="btn btn-primary field-wide" type="submit">Registrar y notificar residente</button>
+        </form>
+        <div class="records-header"><h3>Paquetes registrados</h3><span id="paquetesCount">0 registros</span></div>
+        <div id="paquetesList" class="record-list" aria-live="polite"></div>
+      </section>
 
-        <label for="userEmail">Correo electrónico</label>
-        <input type="email" id="userEmail" name="userEmail" placeholder="correo@ejemplo.com" required />
+      <section class="module-section tab-panel" id="panel-stock" data-panel="stock" role="tabpanel" aria-labelledby="tab-stock" data-hu="HU-31" hidden>
+        <div class="section-heading"><div><p class="eyebrow">HU-31</p><h2>Stock del gimnasio</h2><p>Reporta insumos que alcanzaron su nivel mínimo de reposición.</p></div></div>
+        <form id="stockForm" class="operation-form">
+          <label>Insumo <input id="stockInsumo" name="insumo" required placeholder="Ej. Toallas de papel" /></label>
+          <label>Unidad <input id="stockUnidad" name="unidad" required placeholder="Ej. rollos" /></label>
+          <label>Cantidad actual <input id="stockActual" name="actual" type="number" min="0" required /></label>
+          <label>Stock mínimo <input id="stockMinimo" name="minimo" type="number" min="1" required /></label>
+          <button class="btn btn-primary field-wide" type="submit">Registrar nivel de stock</button>
+        </form>
+        <div class="records-header"><h3>Control de insumos</h3><span id="stockCount">0 alertas</span></div>
+        <div id="stockList" class="record-list" aria-live="polite"></div>
+      </section>
 
-        <label for="userApartment">Departamento</label>
-        <input type="text" id="userApartment" name="userApartment" placeholder="Ej. Torre B - Depto 210" required />
+      <section class="module-section tab-panel" id="panel-visitas" data-panel="visitas" role="tabpanel" aria-labelledby="tab-visitas" data-hu="HU-32" hidden>
+        <div class="section-heading"><div><p class="eyebrow">HU-32</p><h2>QR simulado para visitas</h2><p>Genera una credencial temporal para presentar en recepción.</p></div></div>
+        <form id="visitaForm" class="operation-form">
+          <label>Nombre del visitante <input id="visitaNombre" name="nombre" required placeholder="Ej. Luis Salazar" /></label>
+          <label>Documento <input id="visitaDocumento" name="documento" required pattern="[A-Za-z0-9-]{6,15}" placeholder="DNI o pasaporte" /></label>
+          <label>Departamento que visita <input id="visitaDepartamento" name="departamento" required placeholder="Ej. A-304" /></label>
+          <label>Fecha y hora de ingreso <input id="visitaFecha" name="fecha" type="datetime-local" required /></label>
+          <label>Vigencia (horas) <input id="visitaVigencia" name="vigencia" type="number" min="1" max="24" value="4" required /></label>
+          <button class="btn btn-primary" type="submit">Generar QR simulado</button>
+        </form>
+        <div class="records-header"><h3>Credenciales generadas</h3><span id="visitasCount">0 credenciales</span></div>
+        <div id="visitasList" class="record-list cards-grid" aria-live="polite"></div>
+      </section>
 
-        <label for="userRole">Rol</label>
-        <select id="userRole" name="userRole" required>
-          <option value="">Selecciona rol</option>
-          <option value="Administrador">Administrador</option>
-          <option value="Residente">Residente</option>
-          <option value="Propietario">Propietario</option>
-        </select>
+      <section class="module-section tab-panel" id="panel-personal" data-panel="personal" role="tabpanel" aria-labelledby="tab-personal" data-hu="HU-33" hidden>
+        <div class="section-heading"><div><p class="eyebrow">HU-33</p><h2>Personal doméstico</h2><p>Registra a la persona autorizada y su horario habitual.</p></div></div>
+        <form id="personalForm" class="operation-form">
+          <label>Nombre completo <input id="personalNombre" name="nombre" required placeholder="Ej. Rosa Huamán" /></label>
+          <label>Documento <input id="personalDocumento" name="documento" required pattern="[A-Za-z0-9-]{6,15}" placeholder="DNI o CE" /></label>
+          <label>Departamento <input id="personalDepartamento" name="departamento" required placeholder="Ej. C-502" /></label>
+          <label>Tipo de servicio <select id="personalServicio" name="servicio" required><option value="">Selecciona</option><option>Limpieza</option><option>Cuidado</option><option>Cocina</option><option>Servicio general</option></select></label>
+          <label>Días autorizados <select id="personalDias" name="dias" required><option value="">Selecciona</option><option>Lunes a viernes</option><option>Lunes a sábado</option><option>Fines de semana</option><option>Todos los días</option></select></label>
+          <label>Hora de ingreso <input id="personalInicio" name="inicio" type="time" required /></label>
+          <label>Hora de salida <input id="personalFin" name="fin" type="time" required /></label>
+          <button class="btn btn-primary" type="submit">Registrar autorización</button>
+        </form>
+        <div class="records-header"><h3>Personal autorizado</h3><span id="personalCount">0 personas</span></div>
+        <div id="personalList" class="record-list" aria-live="polite"></div>
+      </section>
 
-        <label for="userStatus">Estado</label>
-        <select id="userStatus" name="userStatus" required>
-          <option value="">Selecciona estado</option>
-          <option value="Activo">Activo</option>
-          <option value="Pendiente">Pendiente</option>
-          <option value="Bloqueado">Bloqueado</option>
-        </select>
-
-        <button type="button">Guardar usuario</button>
-      </form>
+      <section class="module-section tab-panel" id="panel-mudanzas" data-panel="mudanzas" role="tabpanel" aria-labelledby="tab-mudanzas" data-hu="HU-34" hidden>
+        <div class="section-heading"><div><p class="eyebrow">HU-34</p><h2>Programación de mudanzas</h2><p>Reserva el horario y genera la orden de protección del ascensor.</p></div></div>
+        <form id="mudanzaForm" class="operation-form">
+          <label>Residente <input id="mudanzaResidente" name="residente" required placeholder="Ej. Carlos Rivas" /></label>
+          <label>Departamento <input id="mudanzaDepartamento" name="departamento" required placeholder="Ej. A-118" /></label>
+          <label>Tipo <select id="mudanzaTipo" name="tipo" required><option value="">Selecciona</option><option>Ingreso</option><option>Salida</option></select></label>
+          <label>Fecha <input id="mudanzaFecha" name="fecha" type="date" required /></label>
+          <label>Hora de inicio <input id="mudanzaInicio" name="inicio" type="time" required /></label>
+          <label>Hora de fin <input id="mudanzaFin" name="fin" type="time" required /></label>
+          <button class="btn btn-primary field-wide" type="submit">Programar y generar orden</button>
+        </form>
+        <div class="records-header"><h3>Mudanzas programadas</h3><span id="mudanzasCount">0 órdenes</span></div>
+        <div id="mudanzasList" class="record-list" aria-live="polite"></div>
+      </section>
     </main>
-    <aside class="right-panel"><section class="side-widget"><h3>Roles</h3><div class="method-list"><div><span>🛡️</span>Administradores<strong>6</strong></div><div><span>🏠</span>Residentes<strong>104</strong></div><div><span>🔑</span>Propietarios<strong>18</strong></div></div></section><section class="side-widget"><h3>Acciones rápidas</h3><div class="quick-actions"><button>＋ Crear usuario</button><button>📩 Enviar invitación</button><button>⬇️ Exportar usuarios</button></div></section></aside>
   </div>
-  <script src="js/filters.js"></script>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/usuarios.js"></script>
 </body>
 </html>
