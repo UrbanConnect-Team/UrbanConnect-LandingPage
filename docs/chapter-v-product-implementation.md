@@ -185,7 +185,9 @@ La navegación principal conecta doce páginas HTML:
 | Accesos | `usuarios.html` | Gestión funcional de paquetes, stock, visitas, personal y mudanzas. |
 | Configuración | `configuracion.html` | Interfaz disponible; persistencia pendiente. |
 
-`js/filters.js` proporciona búsqueda, filtrado y apertura de formularios modales a los módulos visuales compartidos. No guarda sus formularios. Las funciones completas con persistencia se concentran actualmente en `js/reportes.js`, `js/pagos.js` y `js/usuarios.js`.
+Reservas, encuestas y servicios gestionan su búsqueda, filtrado y apertura de formularios modales desde `js/reservas.js`, `js/encuestas.js` y `js/servicios.js`. Comunicados y documentos conservan estas interacciones mediante `js/filters.js`, que no guarda los formularios. Las funciones completas con persistencia se concentran actualmente en `js/reportes.js`, `js/pagos.js` y `js/usuarios.js`.
+
+Los estilos de pagos, reservas, encuestas, servicios y documentos se mantienen en `css/pagos.css`, `css/reservas.css`, `css/encuestas.css`, `css/servicios.css` y `css/documentos.css`, respectivamente. Las hojas de reservas, encuestas, servicios y documentos ya no importan `css/pagos.css`: cada módulo contiene sus tarjetas, filtros, botones, badges, paneles, estados vacíos y breakpoints responsive. Este desacoplamiento evita que un cambio visual en pagos rompa la presentación de otras páginas.
 
 ### 5.2.2 Persistencia
 

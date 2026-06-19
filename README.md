@@ -44,7 +44,9 @@ Después del acceso, el sistema dirige al usuario a `dashboard.html`.
 | `usuarios.html` | Accesos y operaciones | Paquetes, stock, QR de visitas, personal doméstico y mudanzas. |
 | `configuracion.html` | Preferencias de la comunidad | Controles visuales; pendiente de persistencia. |
 
-Los formularios de comunicados, servicios, encuestas, reservas y documentos todavía no crean registros. El script compartido `js/filters.js` controla sus filtros y modales.
+Los formularios de comunicados, servicios, encuestas, reservas y documentos todavía no crean registros. Reservas, encuestas y servicios controlan sus filtros y modales desde `js/reservas.js`, `js/encuestas.js` y `js/servicios.js`; comunicados y documentos conservan esas interacciones mediante `js/filters.js`.
+
+Pagos, reservas, encuestas, servicios y documentos cargan una hoja CSS propia con sus componentes, paneles y reglas responsive. Sus estilos de módulo están desacoplados: ninguna de las hojas de reservas, encuestas, servicios o documentos importa `css/pagos.css`, por lo que los cambios visuales de una página no alteran las demás.
 
 ## Funcionalidades core documentadas
 
@@ -98,6 +100,9 @@ UrbanConnect-LandingPage/
 │   ├── filters.js
 │   ├── reportes.js
 │   ├── pagos.js
+│   ├── reservas.js
+│   ├── encuestas.js
+│   ├── servicios.js
 │   └── usuarios.js
 ├── img/
 ├── features/
