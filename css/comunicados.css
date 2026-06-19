@@ -39,7 +39,7 @@ body {
 
 .logo h2 {
   font-size: 24px;
-  font-weight: 850;
+  font-weight: 800;
   color: var(--azul);
   letter-spacing: -0.8px;
 }
@@ -61,7 +61,7 @@ body {
   padding: 14px 15px;
   border-radius: 13px;
   color: #1f2d46;
-  font-weight: 650;
+  font-weight: 600;
   transition: 0.25s ease;
 }
 
@@ -132,7 +132,7 @@ body {
 
 .topbar h1 {
   font-size: 30px;
-  font-weight: 850;
+  font-weight: 800;
   letter-spacing: -0.8px;
   margin-bottom: 8px;
 }
@@ -192,7 +192,7 @@ body {
   color: var(--blanco);
   display: grid;
   place-items: center;
-  font-weight: 850;
+  font-weight: 800;
 }
 
 .profile h4 {
@@ -237,7 +237,7 @@ body {
   background: transparent;
   padding: 14px 0;
   color: #40516a;
-  font-weight: 750;
+  font-weight: 700;
   font-size: 14px;
   border-bottom: 2px solid transparent;
 }
@@ -307,7 +307,7 @@ body {
   border: 1px solid #cfdbea;
   background: var(--blanco);
   color: var(--azul-oscuro);
-  font-weight: 750;
+  font-weight: 700;
 }
 
 /* Lista comunicados */
@@ -376,7 +376,7 @@ body {
   padding: 5px 10px;
   border-radius: 8px;
   font-size: 12px;
-  font-weight: 750;
+  font-weight: 700;
 }
 
 .blue-light {
@@ -414,7 +414,7 @@ body {
 
 .announcement-meta p {
   color: var(--azul-oscuro);
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .status {

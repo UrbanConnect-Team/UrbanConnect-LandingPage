@@ -15,14 +15,14 @@
 .module-form h3 {
   grid-column: 1 / -1;
   font-size: 17px;
-  font-weight: 850;
+  font-weight: 700;
   margin-bottom: 4px;
 }
 
 .module-form label {
   font-size: 13px;
   color: #1f2d46;
-  font-weight: 750;
+  font-weight: 600;
   margin-bottom: -8px;
 }
 
@@ -67,7 +67,7 @@
   border-radius: 10px;
   background: linear-gradient(135deg, var(--verde), var(--verde-oscuro));
   color: var(--blanco);
-  font-weight: 800;
+  font-weight: 600;
   box-shadow: 0 10px 24px rgba(24, 191, 114, 0.25);
 }
 
@@ -173,7 +173,7 @@ body.module-modal-open {
   height: 44px;
   padding: 0 18px;
   border-radius: 11px;
-  font-weight: 800;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -191,14 +191,6 @@ body.module-modal-open {
   .module-modal-card .module-form { padding: 20px; }
   .module-modal-actions { flex-direction: column-reverse; }
   .module-form .module-modal-actions button { width: 100%; }
-}
-
-@media (max-width: 700px) {
-  .module-form {
-    grid-template-columns: 1fr;
-  }
-
-  .module-form button {
-    width: 100%;
-  }
+  .module-form { grid-template-columns: 1fr; }
+  .module-form button { width: 100%; }
 }

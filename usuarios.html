@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>urbanConnect | Accesos y operaciones</title>
+  <title>urbanConnect | Usuarios</title>
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/usuarios.css" />
@@ -11,36 +11,50 @@
 <body>
   <div class="app-layout">
     <aside class="sidebar">
-      <div class="logo"><img src="img/logo-urbanconnect.png" alt="Logo urbanConnect" /><h2>urban<span>Connect</span></h2></div>
+      <div class="logo">
+        <img src="img/logo-urbanconnect.png" alt="Logo urbanConnect" />
+        <h2>urban<span>Connect</span></h2>
+      </div>
       <nav class="menu" aria-label="Navegación principal">
-        <a href="dashboard.html" class="menu-item"><span>⌂</span>Inicio</a>
-        <a href="comunicados.html" class="menu-item"><span>◉</span>Comunicados</a>
-        <a href="reportes.html" class="menu-item"><span>▥</span>Reportes</a>
-        <a href="servicios.html" class="menu-item"><span>◇</span>Servicios</a>
-        <a href="encuestas.html" class="menu-item"><span>✓</span>Encuestas</a>
-        <a href="reservas.html" class="menu-item"><span>□</span>Reservas</a>
-        <a href="pagos.html" class="menu-item"><span>$</span>Pagos</a>
-        <a href="documentos.html" class="menu-item"><span>▤</span>Documentos</a>
-        <a href="usuarios.html" class="menu-item active" aria-current="page"><span>♙</span>Accesos</a>
-        <a href="configuracion.html" class="menu-item"><span>⚙</span>Configuración</a>
+        <a href="dashboard.html" class="menu-item"><span aria-hidden="true">🏠</span>Inicio</a>
+        <a href="comunicados.html" class="menu-item"><span aria-hidden="true">📢</span>Comunicados</a>
+        <a href="reportes.html" class="menu-item"><span aria-hidden="true">📊</span>Reportes</a>
+        <a href="servicios.html" class="menu-item"><span aria-hidden="true">🛠️</span>Servicios</a>
+        <a href="encuestas.html" class="menu-item"><span aria-hidden="true">📝</span>Encuestas</a>
+        <a href="reservas.html" class="menu-item"><span aria-hidden="true">📅</span>Reservas</a>
+        <a href="pagos.html" class="menu-item"><span aria-hidden="true">💳</span>Pagos</a>
+        <a href="documentos.html" class="menu-item"><span aria-hidden="true">📁</span>Documentos</a>
+        <a href="usuarios.html" class="menu-item active" aria-current="page"><span aria-hidden="true">👥</span>Usuarios</a>
+        <a href="configuracion.html" class="menu-item"><span aria-hidden="true">⚙️</span>Configuración</a>
       </nav>
-      <div class="sidebar-card"><div class="shield-box">◈</div><h3>Operación segura</h3><p>Los registros de acceso quedan disponibles en este dispositivo.</p></div>
+      <div class="sidebar-card">
+        <div class="shield-box" aria-hidden="true">🛡️</div>
+        <h3>Operación segura</h3>
+        <p>Los registros de acceso quedan disponibles en este dispositivo.</p>
+      </div>
     </aside>
 
     <main class="main-content">
       <header class="topbar">
-        <div><p class="eyebrow">Administración del edificio</p><h1>Accesos y operaciones</h1><p>Paquetería, visitas, personal, insumos y mudanzas en un solo lugar.</p></div>
-        <div class="profile"><div class="avatar">JP</div><div><h4>Juan Pérez</h4><p>Administrador</p></div></div>
+        <div>
+          <p class="eyebrow">Administración del edificio</p>
+          <h1>Usuarios</h1>
+          <p>Paquetería, visitas, personal, insumos y mudanzas en un solo lugar.</p>
+        </div>
+        <div class="profile" aria-label="Usuario actual">
+          <div class="avatar" aria-hidden="true">JP</div>
+          <div><h4>Juan Pérez</h4><p>Administrador</p></div>
+        </div>
       </header>
 
       <section class="stats-row" aria-label="Resumen operativo">
-        <article class="stat-card"><div class="stat-icon green">▣</div><div><p>Paquetes pendientes</p><h2 id="statPaquetes">0</h2><span>Por entregar</span></div></article>
-        <article class="stat-card"><div class="stat-icon red">!</div><div><p>Stock bajo</p><h2 id="statStock">0</h2><span>Insumos por reponer</span></div></article>
-        <article class="stat-card"><div class="stat-icon blue">⌗</div><div><p>Visitas vigentes</p><h2 id="statVisitas">0</h2><span>Con QR activo</span></div></article>
-        <article class="stat-card"><div class="stat-icon orange">↕</div><div><p>Mudanzas próximas</p><h2 id="statMudanzas">0</h2><span>Con orden generada</span></div></article>
+        <article class="stat-card"><div class="stat-icon green" aria-hidden="true">📦</div><div><p>Paquetes pendientes</p><h2 id="statPaquetes">0</h2><span>Por entregar</span></div></article>
+        <article class="stat-card"><div class="stat-icon red" aria-hidden="true">⚠️</div><div><p>Stock bajo</p><h2 id="statStock">0</h2><span>Insumos por reponer</span></div></article>
+        <article class="stat-card"><div class="stat-icon blue" aria-hidden="true">🪪</div><div><p>Visitas vigentes</p><h2 id="statVisitas">0</h2><span>Con QR activo</span></div></article>
+        <article class="stat-card"><div class="stat-icon orange" aria-hidden="true">🚛</div><div><p>Mudanzas próximas</p><h2 id="statMudanzas">0</h2><span>Con orden generada</span></div></article>
       </section>
 
-      <nav class="section-tabs" aria-label="Operaciones" role="tablist">
+      <nav class="section-tabs" aria-label="Operaciones">
         <button class="section-tab active" id="tab-paquetes" data-tab="paquetes" role="tab" aria-selected="true" aria-controls="panel-paquetes">Paquetes</button>
         <button class="section-tab" id="tab-stock" data-tab="stock" role="tab" aria-selected="false" aria-controls="panel-stock">Stock gimnasio</button>
         <button class="section-tab" id="tab-visitas" data-tab="visitas" role="tab" aria-selected="false" aria-controls="panel-visitas">QR de visitas</button>

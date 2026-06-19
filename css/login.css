@@ -6,6 +6,8 @@ body {
     radial-gradient(circle at top right, rgba(7, 47, 99, 0.07), transparent 30%),
     linear-gradient(180deg, #ffffff 0%, #f5faff 100%);
   overflow-x: hidden;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .page {
@@ -131,7 +133,7 @@ body {
   width: 100%;
   max-width: 472px;
   padding: 42px;
-  border-radius: 28px;
+  border-radius: 24px;
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid rgba(217, 226, 238, 0.95);
   box-shadow: var(--sombra-fuerte);
@@ -169,7 +171,7 @@ body {
 
 .brand {
   font-size: 31px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.9px;
   color: var(--azul-oscuro);
 }
@@ -181,6 +183,7 @@ body {
 h1 {
   font-size: 34px;
   line-height: 1.15;
+  font-weight: 700;
   color: var(--azul-oscuro);
   letter-spacing: -0.7px;
   margin-bottom: 28px;
@@ -196,7 +199,7 @@ label {
   display: block;
   margin-bottom: 9px;
   font-size: 14px;
-  font-weight: 750;
+  font-weight: 600;
   color: var(--azul-oscuro);
 }
 
@@ -275,7 +278,7 @@ label {
 
 .options a {
   color: #0867d6;
-  font-weight: 750;
+  font-weight: 600;
 }
 
 .options a:hover {
@@ -292,7 +295,7 @@ label {
   background: linear-gradient(135deg, var(--verde), var(--verde-oscuro));
   color: var(--blanco);
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
   box-shadow: 0 12px 28px rgba(24, 191, 114, 0.28);
   transition: 0.25s ease;
 }
@@ -338,7 +341,7 @@ label {
   background: var(--blanco);
   color: var(--azul-oscuro);
   font-size: 15px;
-  font-weight: 750;
+  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -354,7 +357,7 @@ label {
 
 .google-g {
   font-size: 23px;
-  font-weight: 850;
+  font-weight: 700;
   font-family: Arial, sans-serif;
   color: #4285f4;
 }
@@ -371,7 +374,7 @@ label {
 .register a {
   color: var(--verde);
   margin-left: 6px;
-  font-weight: 750;
+  font-weight: 600;
 }
 
 /* Seguridad inferior */
@@ -401,7 +404,7 @@ label {
 .secure strong {
   display: block;
   color: #6a7b94;
-  font-weight: 750;
+  font-weight: 600;
 }
 
 /* Imagen de ciudad */
