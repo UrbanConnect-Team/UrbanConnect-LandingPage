@@ -33,6 +33,8 @@ Los elementos bajo control de configuración son:
 
 El proyecto no utiliza React, Vue, Angular, Bootstrap, Tailwind ni un gestor de paquetes. Para ejecutarlo se abre `index.html` directamente en el navegador. Las rutas a CSS, JavaScript e imágenes son relativas para que funcionen tanto localmente como en GitHub Pages.
 
+Las credenciales de demostración son `admin` y `admin123`. Después de validarlas, `js/login.js` guarda el usuario activo en `localStorage` y dirige a `dashboard.html`. El usuario inicial se crea únicamente cuando todavía no existe la clave `usuarios`.
+
 ### Configuración responsive
 
 El diseño se desarrolla con enfoque adaptable mediante CSS Grid, Flexbox y media queries:
@@ -162,14 +164,85 @@ Antes de una publicación se debe comprobar que:
 - La navegación funciona con teclado y pantalla táctil.
 - El contenido no se desborda en desktop, tablet o móvil.
 
-## Pruebas de aceptación del inicio de sesión
+## 5.2 Product Implementation
 
-Las pruebas de aceptación se expresan en Gherkin para describir el comportamiento desde la perspectiva del usuario. Los escenarios se encuentran en `features/login.feature` y cubren:
+### 5.2.1 Módulos implementados
 
-- Visualización del formulario de acceso.
-- Acceso con credenciales válidas.
-- Rechazo de credenciales inválidas.
-- Navegación hacia el registro.
-- Adaptación del formulario a diferentes tamaños de pantalla.
+La navegación principal conecta doce páginas HTML:
 
-Estas pruebas pueden ejecutarse manualmente durante el prototipo. En una etapa posterior pueden automatizarse con una herramienta compatible con Gherkin, manteniendo los mismos criterios funcionales.
+| Módulo | Archivo | Estado funcional |
+| --- | --- | --- |
+| Inicio de sesión | `index.html` | Validación local y redirección al dashboard. |
+| Registro | `registro.html` | Interfaz disponible; persistencia pendiente. |
+| Dashboard | `dashboard.html` | Resumen visual y enlaces internos. |
+| Comunicados | `comunicados.html` | Filtros y formulario modal; creación pendiente. |
+| Reportes | `reportes.html` | Gestión funcional de incidencias. |
+| Servicios | `servicios.html` | Filtros y formulario modal; creación pendiente. |
+| Encuestas | `encuestas.html` | Filtros y formulario modal; creación pendiente. |
+| Reservas | `reservas.html` | Filtros y formulario modal; creación pendiente. |
+| Pagos | `pagos.html` | Gestión simulada de cuotas, morosos, gastos y vouchers. |
+| Documentos | `documentos.html` | Filtros y formulario modal; creación pendiente. |
+| Accesos | `usuarios.html` | Gestión funcional de paquetes, stock, visitas, personal y mudanzas. |
+| Configuración | `configuracion.html` | Interfaz disponible; persistencia pendiente. |
+
+`js/filters.js` proporciona búsqueda, filtrado y apertura de formularios modales a los módulos visuales compartidos. No guarda sus formularios. Las funciones completas con persistencia se concentran actualmente en `js/reportes.js`, `js/pagos.js` y `js/usuarios.js`.
+
+### 5.2.2 Persistencia
+
+UrbanConnect utiliza `localStorage` como almacenamiento del prototipo:
+
+| Clave | Responsabilidad |
+| --- | --- |
+| `usuarios` | Usuarios disponibles para autenticación. |
+| `usuarioActivo` | Sesión local activa. |
+| `uc_reportes_tickets` | Tickets de incidencias. |
+| `uc_pagos_cuotas` | Cuotas y pagos simulados. |
+| `uc_pagos_vouchers` | Estados de vouchers. |
+| `uc_paquetes` | Paquetes recibidos y entregados. |
+| `uc_stock` | Control de insumos del gimnasio. |
+| `uc_qr_visitas` | Credenciales temporales simuladas. |
+| `uc_personal` | Autorizaciones de personal doméstico. |
+| `uc_mudanzas` | Mudanzas y órdenes de protección. |
+
+La información permanece solo en el navegador. No existe API, base de datos remota ni sincronización entre dispositivos.
+
+### 5.2.3 User Stories core y trazabilidad
+
+El estado actual incluye 15 historias numeradas con implementación y escenarios Gherkin:
+
+| Área | Historias | Feature |
+| --- | --- | --- |
+| Reportes | `HU01`, `HU02`, `HU03`, `HU04`, `HU07` | `features/reportes.feature` |
+| Pagos | `HU09`, `HU10`, `HU11`, `HU12`, `HU14` | `features/pagos.feature` |
+| Accesos | `HU21`, `HU31`, `HU32`, `HU33`, `HU34` | `features/accesos.feature` |
+
+La meta de 30 User Stories core todavía no está completa: faltan 15 historias numeradas con su implementación, persistencia cuando corresponda y escenarios de aceptación.
+
+### 5.2.4 Pruebas de aceptación
+
+Las pruebas se expresan en Gherkin y se distribuyen de la siguiente manera:
+
+| Archivo | Escenarios | Cobertura |
+| --- | ---: | --- |
+| `features/login.feature` | 5 | Formulario, acceso válido e inválido, registro y responsive. |
+| `features/reportes.feature` | 5 | Creación, asignación, evidencias, estados y urgencia. |
+| `features/pagos.feature` | 5 | Gastos, cuotas, morosos, recordatorios y vouchers. |
+| `features/accesos.feature` | 5 | Paquetes, stock, visitas, personal y mudanzas. |
+
+El repositorio contiene 20 escenarios en total. Los escenarios se ejecutan manualmente durante esta etapa; todavía no existe un runner automatizado de Gherkin.
+
+### 5.2.5 Responsive y accesibilidad
+
+Las hojas de estilo incluyen puntos de quiebre para reorganizar navegación, columnas, formularios, tarjetas y tablas. La validación previa a una publicación debe cubrir desktop, tablet y móvil en Chrome, Edge y Firefox.
+
+Todas las imágenes HTML actuales tienen texto alternativo. Los resultados dinámicos principales de reportes, pagos y accesos disponen de regiones `aria-live`. Como trabajo pendiente deben asociarse labels a algunos filtros y controles de configuración, proporcionar nombres accesibles a botones de icono y verificar navegación completa por teclado.
+
+### 5.2.6 Limitaciones conocidas
+
+- Los formularios de comunicados, documentos, encuestas, reservas y servicios se muestran en modal, pero todavía no crean registros.
+- Registro y configuración no conservan cambios.
+- Algunos botones de acciones rápidas, filtros y menús contextuales son elementos visuales sin comportamiento asociado.
+- La autenticación es una simulación local y no protege las páginas mediante un backend.
+- No hay pruebas automatizadas ni integración continua para los escenarios Gherkin.
+
+Estas limitaciones deben cerrarse antes de declarar completas las 30 User Stories core o una versión productiva.
