@@ -257,16 +257,16 @@ button {
   font-size: clamp(48px, 7vw, 82px);
   font-weight: var(--weight-hero);
   line-height: 1;
-  letter-spacing: -.035em;
+  letter-spacing: 0;
 }
 
 .hero-description {
   max-width: 610px;
-  margin-top: 24px;
-  color: var(--color-muted);
-  font-size: 19px;
-  font-weight: var(--weight-regular);
-  line-height: 1.65;
+  margin-top: 18px;
+  color: var(--color-text);
+  font-size: 22px;
+  font-weight: var(--weight-semibold);
+  line-height: 1.45;
 }
 
 .hero-actions {
@@ -277,21 +277,35 @@ button {
 }
 
 .hero-highlights {
-  margin-top: 28px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 24px;
+  max-width: 640px;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
   color: var(--color-text);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: var(--weight-medium);
   list-style: none;
 }
 
-.hero-highlights li::before {
-  content: "✓";
-  margin-right: 7px;
-  color: var(--color-green-dark);
-  font-weight: var(--weight-bold);
+.hero-highlights li {
+  min-height: 112px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-green);
+  border-radius: var(--radius-small);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 8px 20px rgba(6, 47, 99, 0.06);
+  line-height: 1.45;
+}
+
+.hero-highlights strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--color-navy-dark);
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
 
 .hero-preview {
@@ -763,8 +777,12 @@ button {
   }
 
   .hero-highlights {
-    flex-direction: column;
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .hero-highlights li {
+    min-height: auto;
   }
 
   .hero-preview {
